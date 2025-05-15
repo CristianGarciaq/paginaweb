@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TeC Conect</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+
+    .form-login {
+      position: relative;
+      width: 400px;
+      background: rgba(0, 0, 0, 0.8);
+      margin: 180px auto;
+      box-shadow: 7px 13px 37px #000;
+      padding: 40px 30px;
+      border-radius: 12px;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Imagen de fondo dentro del formulario, grande y tenue */
+    .form-login img.logo-fondo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 350px;       /* tamaño grande */
+      max-width: 90%;     /* para que no se salga del formulario */
+      opacity: 0.05;      /* muy tenue */
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      pointer-events: none; /* que no interfiera con clicks */
+    }
+
+    .form-login h5,
+    .controls,
+    label,
+    .buttons,
+    p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-login h5 {
+      margin-bottom: 30px;
+      border-bottom: 1px solid white;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .controls {
+      width: 100%;
+      border: 1px solid #017bab;
+      margin-bottom: 15px;
+      padding: 11px 10px;
+      background: #42bfd8;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .controls:focus {
+      border-color: #7A1E48;
+      outline: none;
+      box-shadow: 0 0 5px #7A1E48;
+    }
+
+    .buttons {
+      width: 100%;
+      height: 40px;
+      background: #7A1E48;
+      border: none;
+      color: white;
+      margin-bottom: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    .buttons:hover {
+      background: #5A1434;
+    }
+
+    .form-login p {
+      height: 40px;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .form-login a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .form-login a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="form-login">
+    <!-- Imagen de fondo dentro del formulario -->
+    <img src="file:///C:/Users/cr7ga/OneDrive/Desktop/proyectoTec/IMAGENLOGIN.jpg" alt="Logo de fondo" class="logo-fondo" />
+
+    <h5>TeC Conect</h5>
+
+    <form method="POST" th:action="@{/login}">
+      <input class="controls" type="text" name="username" id="username" placeholder="Usuario" required />
+      <input class="controls" type="password" name="password" id="password" placeholder="Contraseña" required />
+
+      <label>
+        <input type="checkbox" id="recordar" /> Recordar Usuario
+      </label>
+
+      <button class="buttons" type="submit">Ingresar</button>
+    </form>
+
+    <p><a href="#">¿Olvidaste tu Contraseña?</a></p>
+    <p><a href="registro.html">¿No tienes cuenta? Crea una aquí</a></p>
+  </section>
+
+</body>
+</html>

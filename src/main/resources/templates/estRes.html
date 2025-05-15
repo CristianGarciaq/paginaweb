@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Alumno</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Alumno</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>apellidoP</th>
+                    <th>apellidoP</th>
+                    <th>correo</th>
+                    <th>Descripcion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Recorrer la lista de direcciones -->
+                <tr th:each="estres : ${alumn}">
+                    <td th:text="${estres.matricula}"></td>
+                    <td th:text="${estres.nombre}"></td>
+                    <td th:text="${estres.apellidopa}"></td> 
+                    <td th:text="${estres.apellidoma}"></td> 
+                    <td th:text="${estres.correo}"></td> 
+                    <td th:text="${estres.descripccion}"></td> 
+                    <td>
+                        <!-- Botón para editar -->
+                        <a th:href="@{/editarNuevo/{id}(id=${estres.matricula})}" class="btn btn-primary btn-sm">Editar</a>
+                        <!-- Botón para eliminar -->
+                        <a th:href="@{/eliminarNuevo/{id}(id=${estres.matricula})}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro?')">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

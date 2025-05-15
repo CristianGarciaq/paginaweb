@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registro</title>
+</head>
+<body>
+    <h2>Registro de Usuario</h2>
+
+    <p th:text="${error}"></p>
+
+    <form th:action="@{/guardarRegistro}" method="post" th:object="${appUser}">
+        <label>Clave de Servidor Público:</label>
+        <input type="text" th:field="*{uacveserv}" th:value="${codigoUsuario}" readonly/><br/>
+
+        <label>Correo:</label>
+        <input type="email" th:field="*{uacorreo}" required/><br/>
+
+        <label>Contraseña:</label>
+        <input type="password" th:field="*{uapassword}" required/><br/>
+
+        <button type="submit">Registrarse</button>
+    </form>
+</body>
+</html>
