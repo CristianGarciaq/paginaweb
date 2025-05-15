@@ -12,41 +12,51 @@
       box-sizing: border-box;
     }
 
-
-
-    .form-login {
+    body {
       position: relative;
-      width: 400px;
-      background: rgba(0, 0, 0, 0.8);
-      margin: 180px auto;
-      box-shadow: 7px 13px 37px #000;
-      padding: 40px 30px;
-      border-radius: 12px;
-      color: white;
-      text-align: center;
-      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("/IMAGEN.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
-    /* Imagen de fondo dentro del formulario, grande y tenue */
-    .form-login img.logo-fondo {
+    /* Fondo oscuro sobre la imagen */
+    body::before {
+      content: "";
       position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 350px;       /* tamaño grande */
-      max-width: 90%;     /* para que no se salga del formulario */
-      opacity: 0.05;      /* muy tenue */
-      transform: translate(-50%, -50%);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
       z-index: 0;
-      pointer-events: none; /* que no interfiera con clicks */
+    }
+
+    .form-login {
+      width: 400px;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 7px 13px 37px #000;
+      color: white;
+      text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     .form-login h5,
     .controls,
     label,
     .buttons,
-    p {
+    p,
+    form {
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     .form-login h5 {
@@ -54,7 +64,6 @@
       border-bottom: 1px solid white;
       font-size: 24px;
       font-weight: bold;
-      color: #ffffff;
     }
 
     .controls {
@@ -93,11 +102,9 @@
     }
 
     .form-login p {
-      height: 40px;
-      text-align: center;
-      border-bottom: 1px solid #ccc;
-      color: #fff;
+      margin-top: 10px;
       font-size: 14px;
+      color: #ffffff;
     }
 
     .form-login a {
@@ -114,24 +121,21 @@
 <body>
 
   <section class="form-login">
-    <!-- Imagen de fondo dentro del formulario -->
-    <img src="file:///C:/Users/cr7ga/OneDrive/Desktop/proyectoTec/IMAGENLOGIN.jpg" alt="Logo de fondo" class="logo-fondo" />
-
     <h5>TeC Conect</h5>
 
-    <form method="POST" th:action="@{/login}">
+    <form th:action="@{/login}" method="post">
       <input class="controls" type="text" name="username" id="username" placeholder="Usuario" required />
       <input class="controls" type="password" name="password" id="password" placeholder="Contraseña" required />
 
       <label>
-        <input type="checkbox" id="recordar" /> Recordar Usuario
+        <input type="checkbox" id="recordar" name="remember" /> Recordar Usuario
       </label>
 
       <button class="buttons" type="submit">Ingresar</button>
     </form>
 
-    <p><a href="#">¿Olvidaste tu Contraseña?</a></p>
-    <p><a href="registro.html">¿No tienes cuenta? Crea una aquí</a></p>
+    <p><a th:href="@{#}">¿Olvidaste tu Contraseña?</a></p>
+    <p><a th:href="@{/registro}">¿No tienes cuenta? Crea una aquí</a></p>
   </section>
 
 </body>
