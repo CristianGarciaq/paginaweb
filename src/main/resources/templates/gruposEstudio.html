@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grupos de Estudio de ISC</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" th:href="@{/stylees.css}">
+
+        <!-- Estilo para igualar tamaños de imagen -->
+        <style>
+            .card-img-top {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+        </style>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div th:replace="barraNav :: header" class="d-flex justify-content-center"></div>
+        </nav>
+
+        <header class="hero text-center py-5 bg-light">
+            <div class="container">
+                <h1 class="display-4">Grupos de Estudio de ISC</h1>
+                <p class="lead">"Llegar juntos es el principio, mantenerse juntos es el progreso, trabajar juntos es el éxito." - Henry Ford.</p>
+            </div>
+        </header>
+
+        <section class="container py-5">
+            <div class="row g-4">
+
+                <!-- Grupo: Álgebra Lineal -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img th:src="@{/algebralineal.jpg}" class="card-img-top" alt="Álgebra Lineal">
+                        <div class="card-body">
+                            <h5 class="card-title">Álgebra Lineal</h5>
+                            <p class="card-text">Todos los temas para aprobar tu curso de álgebra lineal.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a th:href="@{/grupo/algebra}" class="btn btn-outline-dark">Ver grupo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grupo: Cálculo Integral -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img th:src="@{/calculoint.jpg}" class="card-img-top" alt="Cálculo Integral">
+                        <div class="card-body">
+                            <h5 class="card-title">Cálculo Integral</h5>
+                            <p class="card-text">Ejercicios sin resolver y asesorías personales.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a th:href="@{/grupo/calculo}" class="btn btn-outline-dark">Ver grupo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grupo: Ecuaciones -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img th:src="@{/ecua.jpg}" class="card-img-top" alt="Ecuaciones">
+                        <div class="card-body">
+                            <h5 class="card-title">Ecuaciones</h5>
+                            <p class="card-text">Temas completos y formularios para aprobar la materia.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a th:href="@{/grupo/ecuaciones}" class="btn btn-outline-dark">Ver grupo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grupo: Telecomunicaciones -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img th:src="@{/telecom.jpg}" class="card-img-top" alt="Telecomunicaciones">
+                        <div class="card-body">
+                            <h5 class="card-title">Telecomunicaciones</h5>
+                            <p class="card-text">Aprende lo necesario para aprobar lagunas.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a th:href="@{/grupo/telecom}" class="btn btn-outline-dark">Ver grupo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grupo: Sistemas Operativos -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img th:src="@{/sistemop.jpeg}" class="card-img-top" alt="Sistemas Operativos">
+                        <div class="card-body">
+                            <h5 class="card-title">Sistemas Operativos</h5>
+                            <p class="card-text">Aprende todos los sistemas operativos y comandos necesarios.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a th:href="@{/grupo/so}" class="btn btn-outline-dark">Ver grupo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grupo: Principios Eléctricos -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img th:src="@{/principioselec.jpeg}" class="card-img-top" alt="Principios Eléctricos">
+                        <div class="card-body">
+                            <h5 class="card-title">Principios Eléctricos</h5>
+                            <p class="card-text">No te quedes atrás y estudia para lograr ser el mejor armando circuitos.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a th:href="@{/grupo/electricos}" class="btn btn-outline-dark">Ver grupo</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
